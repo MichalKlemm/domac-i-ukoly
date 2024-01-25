@@ -1,4 +1,8 @@
+import egento.cvice.Sellers;
+
+import javax.xml.namespace.QName;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Main {
 
@@ -11,7 +15,7 @@ public class Main {
     }
 
     public static void ukol3() {
-        String pocetLekci = String.valueOf((10));
+        int pocetLekci = (10);
         System.out.println(pocetLekci);
     }
 
@@ -21,14 +25,15 @@ public class Main {
     }
 
     public static void ukol5() {
-        double cena = 0; // Nastavíme do proměnné hodnotu 0
+        BigDecimal cena = BigDecimal.valueOf(0); // Nastavíme do proměnné hodnotu 0
         // Desetkrát přičteme hodnotu jedna desetina (0,1):
         for (int i = 0; i < 10; i++) {
-            cena += 0.1;
+            // cena += 0.1;
                // operátor "+=" znamená: přičti ke stávající
                // hodnotě navíc 0.1
+            System.out.println(cena);
         }
-        System.out.println(cena);
+
         // Má vypsat "1.0". Ale vypíše "0.9999" !!!
     }
 
@@ -66,5 +71,26 @@ public class Main {
         ukol7();
         ukol8();
         ukol9();
+
+
+    Sellers sellers1 =
+            new Sellers("Rudolfus Štraus",
+                    LocalDate.of(1973, 11, 7),
+                    13,63.7, "Hamburk",
+                    "7B8 2746", 13.8, "172.16.0.0/12");
+                 System.out.println(Sellers.getName());
+                 System.out.println(Sellers.getBirthdate());
+                 System.out.println("Počet dosud sjednaných smluv: " + Sellers.getNegotiatedContracts());
+                 System.out.println("Množství prodané mrkve: " + Sellers.getNumberOfCarrotsSold() + " tun");
+                 System.out.println("Město: " + Sellers.getCity());
+                 System.out.println("Číslo SPZ: " + Sellers.getSpz());
+                 System.out.println("Spotřeba na 100 km: " + Sellers.getConsPer100Km());
+                 System.out.println("IP Adresa v. 4: " + Sellers.getIpAdress());
+
+
+
+
+
+
     }
 }
